@@ -1,0 +1,33 @@
+/* Vars */
+:root {
+	--bg-color: rgb(237, 239, 245);
+}
+
+/* General */
+body { background-color: var(--bg-color); font-family: Arial, Helvetica, sans-serif; }
+
+.wrapper > div { display: flex; flex-direction: column; }
+
+/* Soundboard */
+.soundboard { display: flex; flex-direction: column; max-width: 960px; margin: 0 auto 160px; }
+.soundboard__header { flex-grow: 1; width: 100%; display:block; text-align: center; color: #333; }
+.soundboard__elements { display: flex; flex-wrap: wrap; }
+.soundboard__button {  }
+
+
+.button { display: block; padding: 2em; border: none; margin: 0 50px 50px 0; font-size: 1rem; }
+.neu.button {
+	transition: all 0.2s ease-out;
+	outline:none;
+	border-radius: 6px;
+	background: linear-gradient(to bottom right, var(--bg-color), #fff);
+	box-shadow: 9px 9px 16px rgb(163,177,198,0.3), -9px -9px 16px rgba(255,255,255, 0.6);
+}
+.neu.button:hover {
+	cursor: pointer;
+}
+.neu.button:active {
+	background: linear-gradient(to bottom right, var(--bg-color), rgba(255, 255, 255,0.7));
+	box-shadow: 5px 5px 16px rgb(163,177,198,0.1), -5px -5px 16px rgba(255,255,255, 0.6);
+}
+
