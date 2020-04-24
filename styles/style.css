@@ -3,31 +3,68 @@
 	--bg-color: rgb(237, 239, 245);
 }
 
+/* Reset */
+body, html { margin: 0; padding: 0; }
+
 /* General */
 body { background-color: var(--bg-color); font-family: Arial, Helvetica, sans-serif; }
 
 .wrapper > div { display: flex; flex-direction: column; }
 
 /* Soundboard */
-.soundboard { display: flex; flex-direction: column; max-width: 960px; margin: 0 auto 160px; }
+.soundboard { display: flex; flex-direction: column; max-width: 960px; padding: 0 30px; margin: 0 auto 160px; }
 .soundboard__header { flex-grow: 1; width: 100%; display:block; text-align: center; color: #333; }
 .soundboard__elements { display: flex; flex-wrap: wrap; }
 .soundboard__button {  }
 
 
 .button { display: block; padding: 2em; border: none; margin: 0 50px 50px 0; font-size: 1rem; }
+
 .neu.button {
 	transition: all 0.2s ease-out;
 	outline:none;
 	border-radius: 6px;
 	background: linear-gradient(to bottom right, var(--bg-color), #fff);
 	box-shadow: 9px 9px 16px rgb(163,177,198,0.3), -9px -9px 16px rgba(255,255,255, 0.6);
+	width: 140px;
+	display: blok;
+	height: 80px;
+	padding: 0em 2em;
 }
+
 .neu.button:hover {
 	cursor: pointer;
 }
+
 .neu.button:active {
 	background: linear-gradient(to bottom right, var(--bg-color), rgba(255, 255, 255,0.7));
 	box-shadow: 5px 5px 16px rgb(163,177,198,0.1), -5px -5px 16px rgba(255,255,255, 0.6);
 }
+.neu.button.red {
+	border: solid rgba(255,0,0,0.2) 1px;
+}
 
+.soundboard__active-sound {
+	position: fixed;
+	top: 50vh;
+	width: 100%;
+	pointer-events:none;
+	text-align: center;
+	animation: fadein 2s;
+	animation-fill-mode: forwards;
+}
+
+.active-sound__label { font-size: 8rem; font-weight: bold; margin-top: -4rem; }
+
+@keyframes fadein {
+    50% { opacity: 1; }
+    100%   { opacity: 0; }
+
+	0%, 6%, 12%, 18%, 24%, 30%, 36%, 42%, 48%, 54%, 60%, 66%, 72%, 78%, 84%, 90% {
+		transform: translate3d(-40px, 0, 0);
+	}
+
+	0%, 3%, 9%, 15%, 21%, 27%, 33%, 39%, 45%, 51%, 57%, 63%, 69%, 75%, 81%, 87% {
+		transform: translate3d(40px, 0, 0);
+	}
+}
