@@ -12,13 +12,32 @@ body { background-color: var(--bg-color); font-family: Arial, Helvetica, sans-se
 .wrapper > div { display: flex; flex-direction: column; }
 
 /* Soundboard */
-.soundboard { display: flex; flex-direction: column; max-width: 960px; padding: 0 30px; margin: 0 auto 160px; }
+.soundboard { display: flex; flex-direction: column; max-width: 960px; padding: 0 20px; margin: 0 auto 160px; }
 .soundboard__header { flex-grow: 1; width: 100%; display:block; text-align: center; color: #333; }
 .soundboard__elements { display: flex; flex-wrap: wrap; }
 .soundboard__button {  }
 
+.soundboard__filter {
+	margin-bottom: 20px;
+}
 
-.button { display: block; padding: 2em; border: none; margin: 0 50px 50px 0; font-size: 1rem; }
+.filter__button:active {
+	background: linear-gradient(to bottom right, var(--bg-color), rgba(255, 255, 255,0.7));
+	box-shadow: 5px 5px 16px rgb(163,177,198,0.1), -5px -5px 16px rgba(255,255,255, 0.6);
+}
+
+.filter__searchfield {
+	font-size: 1rem;
+	border-radius: 6px;
+	width: 200px;
+	padding: 1em;
+	margin-right: 1rem;
+	border: none; 
+	background: #fff;
+	box-shadow: inset 20px 20px 60px #dbdee8, inset -20px -20px 60px #ffffff;
+}
+
+.button { display: block; padding: 2em; border: none; margin: 0 15px 15px 0; font-size: 0.7rem; }
 
 .neu.button {
 	transition: all 0.2s ease-out;
@@ -26,8 +45,7 @@ body { background-color: var(--bg-color); font-family: Arial, Helvetica, sans-se
 	border-radius: 6px;
 	background: linear-gradient(to bottom right, var(--bg-color), #fff);
 	box-shadow: 9px 9px 16px rgb(163,177,198,0.3), -9px -9px 16px rgba(255,255,255, 0.6);
-	width: 140px;
-	display: blok;
+	width: calc(25vw - 36px);
 	height: 80px;
 	padding: 0em 2em;
 }
@@ -40,8 +58,15 @@ body { background-color: var(--bg-color); font-family: Arial, Helvetica, sans-se
 	background: linear-gradient(to bottom right, var(--bg-color), rgba(255, 255, 255,0.7));
 	box-shadow: 5px 5px 16px rgb(163,177,198,0.1), -5px -5px 16px rgba(255,255,255, 0.6);
 }
+
 .neu.button.red {
 	border: solid rgba(255,0,0,0.2) 1px;
+}
+
+.neu.button.filter__button {
+	display: inline-block;
+    height: auto;
+    padding: 1em;
 }
 
 .soundboard__active-sound {
@@ -67,4 +92,10 @@ body { background-color: var(--bg-color); font-family: Arial, Helvetica, sans-se
 	0%, 3%, 9%, 15%, 21%, 27%, 33%, 39%, 45%, 51%, 57%, 63%, 69%, 75%, 81%, 87% {
 		transform: translate3d(40px, 0, 0);
 	}
+}
+
+
+@media screen and (min-width: 680px) {
+	.button { font-size: 1rem; margin: 0 50px 50px 0; }
+	.neu.button { width: 140px; }
 }

@@ -104,7 +104,7 @@
 				return(
 					<div className = "soundboard__filter">
 						<input value={filter}  onChange={e => setFilter(e.target.value)}  className = "filter__searchfield" />
-						<button onClick = {doFilter}>Find</button>
+						<button className = "neu button filter__button" onClick = {doFilter}>Find</button>
 					</div>
 				);
 			}
