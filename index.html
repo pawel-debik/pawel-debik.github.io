@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 	<title>React Standalone Test</title>
+	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0" />
 	<link rel="stylesheet" type="text/css" href="styles/style.css">
 	<script src = "https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
 	<script src = "https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
@@ -15,8 +16,7 @@
 
 		const App = function(){
 			const [label, changeLabel] = React.useState();
-			const [titleClass, changetitleClass] = React.useState('soundboard__active-sound');
-			const buttonArray = [{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/breh.mp3', 'button_label': 'Breh'}, "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/dubstep1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/easy.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/huhwhatthe.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/marioded.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/afewmomentslater1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/doit1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/whyareyourunning.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/wtbleep.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/yaaaa1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/yay1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/youbetterstop.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/zombie1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/saywhat.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/scream1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/scream2.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/scream3.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/applause1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/fatality.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/burp1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/sorrybro.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/shotsfired.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/fart1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/fbi.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/brz1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/shing1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/no1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/nononono.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/laugh1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/laugh2.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/laughaudience.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/ohno1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/ohno2.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/startbeeps.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/heywhathappened.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/crickets.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/ibelieve1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/imtrying1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/explosion1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/haya1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/9000.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/ohno1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/nani1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/headshot1.wav","https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/modem.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/notfunny.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/error1.mp3", "https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/ratata1.mp3"];
+			const [titleClass, changeTitleClass] = React.useState('soundboard__active-sound');
 			const buttonArraySmall = [
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/breh.mp3', 'button_label': 'Breh'}, 
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/dubstep1.mp3', 'button_label': 'Dubstep'}, 
@@ -38,6 +38,7 @@
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/applause1.mp3', 'button_label': 'Applause'},
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/fatality.mp3', 'button_label': 'Fatality'},
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/toasty.mp3', 'button_label': 'Toasty'},
+					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/hadouken.mp3', 'button_label': 'Hadouken'},
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/burp1.mp3', 'button_label': 'Burp'},
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/fart1.mp3', 'button_label': 'Fart'},
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/sorrybro.mp3', 'button_label': 'Sorry bro'},
@@ -60,20 +61,17 @@
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/9000.mp3', 'button_label': 'Its over 9000!'},
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/nani1.mp3', 'button_label': 'Nani??'},
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/headshot1.wav', 'button_label': 'Head shot'},
-					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/modem.mp3', 'button_label': 'Breh'},
+					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/modem.mp3', 'button_label': 'Modem'},
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/notfunny.mp3', 'button_label': 'Badam. Tsss.'},
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/error1.mp3', 'button_label': 'Windows error'},
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/ratata1.mp3', 'button_label': 'Ratatata'}
 				];
 			
 			const [bunchOfButtons, updateBunchOfButtons] = React.useState(buttonArraySmall);
-
-
-
-			
+	
 			const doStuff = function(props){
 				changeLabel(props.button_label);
-				changetitleClass('soundboard__active-sound active');
+				changeTitleClass('soundboard__active-sound active');
 				const audio = new Audio(props.sound)
 				audio.play();
 			}
@@ -96,26 +94,18 @@
 			};
 
 			const SoundBoardFilter = function(props){
-				const [filter, setFilter] = React.useState();
+				const [filter, setFilter] = React.useState('b');
 
 				const doFilter = function(e){
-
-				const items = buttonArraySmall.filter(item => item.button_label.indexOf(e.target.value) !== -1);
-
-				console.log(items);
-
-					/*
-					- get value from input
-					- map buttons to new variable (I guess)
-					- if value from input matches any part of a string in the buttons variable...
-					- ... then rebuild the buttonArray in he parent by setting a new state, so that the whole buttonlist can reload
-					*/
+					const items = buttonArraySmall.filter(item => item.button_label.indexOf({filter}.filter) !== -1);
+					updateBunchOfButtons(items);
 				}
 
 				return(
-				<div className = "soundboard__filter">
-					<input className = "filter__searchfield" onChange = {doFilter}  />
-				</div>
+					<div className = "soundboard__filter">
+						<input value={filter}  onChange={e => setFilter(e.target.value)}  className = "filter__searchfield" />
+						<button onClick = {doFilter}>Find</button>
+					</div>
 				);
 			}
 
@@ -142,14 +132,7 @@
 					<ActiveTitle />
 					<SoundBoardFilter />
 					<div className = "soundboard__elements">
-					
 						<ButtonList />
-
-
-
-
-
-
 					</div>
 				</div>
 				<div>
