@@ -12,16 +12,12 @@ body { background-color: var(--bg-color); font-family: Arial, Helvetica, sans-se
 .wrapper > div { display: flex; flex-direction: column; }
 
 /* Soundboard */
-.soundboard { display: flex; flex-direction: column; max-width: 960px; padding: 0 20px; margin: 0 auto 160px; }
+.soundboard { display: flex; flex-direction: column; max-width: 960px; padding: 0 10px; margin: 0 auto 160px; }
 .soundboard__header { flex-grow: 1; width: 100%; display:block; text-align: center; color: #333; }
 .soundboard__elements { display: flex; flex-wrap: wrap; }
-.soundboard__button {  }
+.soundboard__filter { margin-bottom: 20px; }
 
-<<<<<<< Updated upstream
-.soundboard__filter {
-	margin-bottom: 20px;
-}
-
+/* Filter */
 .filter__button:active {
 	background: linear-gradient(to bottom right, var(--bg-color), rgba(255, 255, 255,0.7));
 	box-shadow: 5px 5px 16px rgb(163,177,198,0.1), -5px -5px 16px rgba(255,255,255, 0.6);
@@ -38,9 +34,9 @@ body { background-color: var(--bg-color); font-family: Arial, Helvetica, sans-se
 	box-shadow: inset 20px 20px 60px #dbdee8, inset -20px -20px 60px #ffffff;
 }
 
-
-
+/* Buttons */
 .button { display: block; padding: 2em; border: none; margin: 0 15px 15px 0; font-size: 0.7rem; }
+.button:nth-child(4n+4) { padding-right: 2em 0; }
 
 .neu.button {
 	transition: all 0.2s ease-out;
@@ -72,6 +68,7 @@ body { background-color: var(--bg-color); font-family: Arial, Helvetica, sans-se
     padding: 1em;
 }
 
+/* Active sound */
 .soundboard__active-sound {
 	position: fixed;
 	top: 50vh;
@@ -96,12 +93,9 @@ body { background-color: var(--bg-color); font-family: Arial, Helvetica, sans-se
 		transform: translate3d(40px, 0, 0);
 	}
 }
-<<<<<<< Updated upstream
-
 
 @media screen and (min-width: 680px) {
-	.button { font-size: 1rem; margin: 0 50px 50px 0; }
+	.soundboard { padding: 0 20px; }
+	.button { font-size: 1rem; margin: 0 50px 50px 0; padding: 2em; }
 	.neu.button { width: 140px; }
 }
-=======
->>>>>>> Stashed changes
