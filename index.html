@@ -77,12 +77,7 @@
 			}
 
 			const SoundButton = function(props) {
-				return(
-					<div>
-						<audio preload = "auto"></audio>
-						<button onClick={() => doStuff(props)} className = {props.style}>{props.button_label}</button>
-					</div>
-				);
+				return( <button onClick={() => doStuff(props)} className = {props.style}>{props.button_label}</button> );
 			};
 
 			const ActiveTitle = function(props) {

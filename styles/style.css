@@ -17,6 +17,7 @@ body { background-color: var(--bg-color); font-family: Arial, Helvetica, sans-se
 .soundboard__elements { display: flex; flex-wrap: wrap; }
 .soundboard__button {  }
 
+<<<<<<< Updated upstream
 .soundboard__filter {
 	margin-bottom: 20px;
 }
@@ -27,7 +28,7 @@ body { background-color: var(--bg-color); font-family: Arial, Helvetica, sans-se
 }
 
 .filter__searchfield {
-	font-size: 1rem;
+	font-size: 0.7rem;
 	border-radius: 6px;
 	width: 200px;
 	padding: 1em;
@@ -36,6 +37,8 @@ body { background-color: var(--bg-color); font-family: Arial, Helvetica, sans-se
 	background: #fff;
 	box-shadow: inset 20px 20px 60px #dbdee8, inset -20px -20px 60px #ffffff;
 }
+
+
 
 .button { display: block; padding: 2em; border: none; margin: 0 15px 15px 0; font-size: 0.7rem; }
 
@@ -93,9 +96,12 @@ body { background-color: var(--bg-color); font-family: Arial, Helvetica, sans-se
 		transform: translate3d(40px, 0, 0);
 	}
 }
+<<<<<<< Updated upstream
 
 
 @media screen and (min-width: 680px) {
 	.button { font-size: 1rem; margin: 0 50px 50px 0; }
 	.neu.button { width: 140px; }
 }
+=======
+>>>>>>> Stashed changes
