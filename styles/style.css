@@ -36,7 +36,7 @@ body { background-color: var(--bg-color); font-family: Arial, Helvetica, sans-se
 
 /* Buttons */
 .button { display: block; padding: 2em; border: none; margin: 0 15px 15px 0; font-size: 0.7rem; }
-.button:nth-child(4n+4) { padding-right: 2em 0; }
+.button:nth-child(4n+4) { padding: 2em 0; }
 
 .neu.button {
 	transition: all 0.2s ease-out;
@@ -44,7 +44,7 @@ body { background-color: var(--bg-color); font-family: Arial, Helvetica, sans-se
 	border-radius: 6px;
 	background: linear-gradient(to bottom right, var(--bg-color), #fff);
 	box-shadow: 9px 9px 16px rgb(163,177,198,0.3), -9px -9px 16px rgba(255,255,255, 0.6);
-	width: calc(25vw - 36px);
+	width: calc(25vw - 20px);
 	height: 80px;
 	padding: 0em 2em;
 }
