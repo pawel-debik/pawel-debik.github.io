@@ -36,7 +36,7 @@ body { background-color: var(--bg-color); font-family: Arial, Helvetica, sans-se
 
 /* Buttons */
 .button { display: block; padding: 2em; border: none; margin: 0 15px 15px 0; font-size: 0.7rem; }
-.button:nth-child(4n+4) { padding: 2em 0; }
+.button:nth-child(4n+4) { margin-right: 0; }
 
 .neu.button {
 	transition: all 0.2s ease-out;
@@ -44,7 +44,7 @@ body { background-color: var(--bg-color); font-family: Arial, Helvetica, sans-se
 	border-radius: 6px;
 	background: linear-gradient(to bottom right, var(--bg-color), #fff);
 	box-shadow: 9px 9px 16px rgb(163,177,198,0.3), -9px -9px 16px rgba(255,255,255, 0.6);
-	width: calc(25vw - 20px);
+	width: calc(25vw - 2em);
 	height: 80px;
 	padding: 0em 2em;
 }
@@ -94,9 +94,10 @@ body { background-color: var(--bg-color); font-family: Arial, Helvetica, sans-se
 	}
 }
 
-@media screen and (min-width: 680px) {
+@media screen and (min-width: 780px) {
 	.soundboard { padding: 0 20px; }
 	.button { font-size: 1rem; margin: 0 50px 50px 0; padding: 2em; }
+	.button:nth-child(4n+4) { margin-right: 50px; }
 	.neu.button { width: 140px; }
 	.filter__searchfield { font-size: 1rem; }
 }
