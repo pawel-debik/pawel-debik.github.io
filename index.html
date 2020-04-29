@@ -15,8 +15,11 @@
 	<script type = "text/babel">
 
 		const App = function(){
+
 			const [label, changeLabel] = React.useState();
 			const [titleClass, changeTitleClass] = React.useState('soundboard__active-sound');
+
+			// Make array so that we can map this array to a new one when user uses filter
 			const buttonArraySmall = [
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/breh.mp3', 'button_label': 'Breh'}, 
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/dubstep1.mp3', 'button_label': 'Dubstep'}, 
@@ -67,32 +70,47 @@
 					{'url': 'https://raw.githubusercontent.com/pawel-debik/react-standalone-test-1/master/sounds/ratata1.mp3', 'button_label': 'Ratatata'}
 				];
 			
+			// Start with buttonArraySmall (all the buttons), then allow array to be updated when user is using the filter
 			const [bunchOfButtons, updateBunchOfButtons] = React.useState(buttonArraySmall);
 	
 			const doStuff = function(props){
-				changeLabel(props.button_label);
-				changeTitleClass('soundboard__active-sound active');
+				
+				// At first I made a component for showing the title and updated the title label with a state change, but then every child in the parent rerendered and I didn't want that, so maybe this is the more correct way to do it
+				const sb = document.querySelector('.soundboard');
+				var soundBoardActive = document.createElement("div");
+				soundBoardActive.classList.add('soundboard__active-sound');
+				soundBoardActive.classList.add('active');
+
+				var activeSoundLabel = document.createElement("p");
+				activeSoundLabel.classList.add('active-sound__label')
+				soundBoardActive.appendChild(activeSoundLabel);
+
+				var activeSound = document.createTextNode(props.button_label); 
+				activeSoundLabel.appendChild(activeSound); 
+
+				var header = document.querySelector('.soundboard__header');
+				sb.appendChild(soundBoardActive);
+
+				setTimeout(function(){ sb.removeChild(soundBoardActive); }, 2000); // Removing element after it's faded away
+
 				const audio = new Audio(props.sound)
 				audio.play();
+
+				// To Do: can I preload the sounds? Maybe on a mouse hover. Can I check how many title lables are showing, and then stack them on top of each other, instead of having them overlay on top of each other? Can I show the title lable longer, based on the sound duration?
 			}
 
 			const SoundButton = function(props) {
 				return( <button onClick={() => doStuff(props)} className = {props.style}>{props.button_label}</button> );
 			};
 
-			const ActiveTitle = function(props) {
-				return(
-					<div className = {titleClass}>
-						<p className = "active-sound__label">{label}</p>
-					</div>
-				);
-			};
-
+			// Compare user input in filter field and compare it to the full button list. The only show the overlap.
 			const SoundBoardFilter = function(props){
-				const [filter, setFilter] = React.useState('b');
+				const [filter, setFilter] = React.useState('');
 
 				const doFilter = function(e){
-					const items = buttonArraySmall.filter(item => item.button_label.indexOf({filter}.filter) !== -1);
+					//const items = buttonArraySmall.filter(filterFuction);
+					const items = buttonArraySmall.filter(item => item.button_label.toString().toLowerCase().indexOf({filter}.filter) !== -1);
+
 					updateBunchOfButtons(items);
 				}
 
@@ -124,7 +142,6 @@
 
 				<div className = "soundboard">
 					<h1 className = "soundboard__header">React Sound Board For Aiden</h1>
-					<ActiveTitle />
 					<SoundBoardFilter />
 					<div className = "soundboard__elements">
 						<ButtonList />
