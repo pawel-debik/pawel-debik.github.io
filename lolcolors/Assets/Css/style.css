@@ -1,0 +1,41 @@
+/* Style v 0.1 */
+
+/* Resets */
+ul[class], ol[class] {padding: 0; list-style: none; }
+body, h1, h2, h3, h4, p, ul[class], ol[class], li, figure, figcaption, blockquote, dl, dd {margin: 0; }
+
+
+/* Vars */
+:root {
+	--primary-color: #f5eadd;
+	--action-color: #00A3FF;
+	--confirmation-color: #1abc00;
+	--bg-color: #f3f3f3;
+}
+
+/* Timer */ 
+.circle-wrap { margin: 50px auto; width: 150px; height: 150px; background: var(--primary-color); border-radius: 50%; }
+.circle__mask--half { width: 150px; height: 150px; position: absolute; border-radius: 50%; clip: rect(0px, 150px, 150px, 75px); }
+.circle__mask--full { width: 150px; height: 150px; position: absolute; border-radius: 50%; clip: rect(0px, 150px, 150px, 75px); transform: rotate(180deg); }
+.circle__fill { clip: rect(0px, 75px, 150px, 0px); background-color: var(--confirmation-color); transform: rotate(180deg); width: 150px; height: 150px; position: absolute; border-radius: 50%; }
+.inside-circle { width: 130px; height: 130px; border-radius: 50%; background: #fff; line-height: 130px; text-align: center; margin-top: 10px; margin-left: 10px; position: absolute; z-index: 100; font-weight: 700; font-size: 2em }
+
+.circle__mask--full.active,
+.circle__fill.active { animation: fill linear 5s; }
+
+@keyframes fill {
+	0%		{ transform: rotate(0deg) }
+	100%	{ transform: rotate(180deg) }
+}
+
+/* Bar */
+.bar { display: flex; justify-content: center; padding: 2.4em; background-color: var(--bg-color); margin-bottom: 60px; }
+.word__label { font-weight: bold;  font-size: 1.2rem; background-color: #fff; padding: 0.8em 1.6em; }
+.word__label--red { font-weight: bold;  font-size: 1.2rem; background-color: #fff; padding: 0.8em 1.6em; color: red; }
+.word__label--blue { font-weight: bold;  font-size: 1.2rem; background-color: #fff; padding: 0.8em 1.6em; color: blue; }
+.word__label--green { font-weight: bold;  font-size: 1.2rem; background-color: #fff; padding: 0.8em 1.6em; color: green; }
+
+/* Controls */
+.controls { display: flex; justify-content: center; }
+.primary-button { font-size: 1.2rem; background-color: var(--action-color); padding: 0.8em 1.6em; color: #fff; border: none; border-radius: 5px; }
+.primary-button:hover { cursor: pointer; } 
