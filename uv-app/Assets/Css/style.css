@@ -1,0 +1,316 @@
+/* Style v 0.1 */
+
+/* Resets */
+ul[class], ol[class] {padding: 0; list-style: none; }
+body, h1, h2, h3, h4, p, ul[class], ol[class], li, figure, figcaption, blockquote, dl, dd {margin: 0; }
+
+/* Resets */
+:root {
+	--number-font: 'Roboto Slab', serif;
+	--label-font: 'Lato', sans-serif;
+	--accent-color: #2f0074;
+}
+
+/* Fonts */
+.number { 
+	font-family: 'Roboto Slab', serif;
+}
+
+/* * * * * * * * * * * * * * * * * * * */
+/* Header                              */
+/* * * * * * * * * * * * * * * * * * * */
+.app-header {
+	font-family: var(--label-font);
+	color: #fff;
+	font-size: 2em;
+	text-align: center;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * */
+/* Layout                              */
+/* * * * * * * * * * * * * * * * * * * */
+.uv-app { 
+	display: grid; 
+	grid-template-rows: 3em 1fr 1fr 1fr; 
+	grid-row-gap: 2em;
+	padding: 2em;
+    grid-template-columns: calc(100vw - 4em);
+	background-image: linear-gradient(#b37bda, #d83d83); 
+	height: calc(100vh - 4em);
+	overflow-x: hidden;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * */
+/* Factors                             */
+/* * * * * * * * * * * * * * * * * * * */
+
+/* Factors layout */
+.block-factors { 
+	display: grid; 
+	grid-template-columns: calc(50% - 2em) calc(50% - 2em); 
+	grid-template-rows: minmax(10vh, 15vh) minmax(10vh, 13vh) minmax(10vh, 13vh);
+	grid-column-gap: 4em;
+	grid-row-gap: 1em;
+	text-align: center;
+}
+
+.slider {
+	max-width: 20vw;
+}
+
+/* Spf */
+.factor-spf {
+	grid-row: 2 / 3;
+	grid-column: 2 / 3;
+}
+
+.factor-spf_label {
+	font-family: var(--label-font);
+	color: #fff;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.factor-spf_number {
+	font-family: var(--number-font);
+	color: #fff;
+	font-size: 3em;
+}
+
+/* Cloud coverage */
+.factor-cloud-coverage {
+	display: flex;
+    flex-direction: column;
+	position: relative;
+	grid-row: 1 / 2;
+	align-items: center;
+}
+
+.cloud1 {
+	position: absolute;
+	width: 50%;
+	left: calc(0px - 50%);
+	top: 20%;
+	opacity: 0;
+	transition: all 1s cubic-bezier(0, 0.2, 0.5, 1);
+}
+
+.cloud2 {
+	position: absolute;
+	width: 50%;
+	right: calc(0px - 50%);
+	top: 50%;
+	opacity: 0;
+	transition: all 1s cubic-bezier(0, 0.2, 0.5, 1);
+}
+
+.sun {
+	top: 0;
+	max-width: 70%;
+	max-height: 70%;
+	position: relative;
+	transition: all 1s cubic-bezier(0, 0.2, 0.5, 1);
+}
+
+.cloud-coverage-2 .cloud1 {
+	left: calc(0px - 40%);
+	opacity: 0.2;
+}
+
+.cloud-coverage-2 .cloud2 {
+	right: calc(0px - 40%);
+	top: 40%;
+	opacity: 0.2;
+}
+
+.cloud-coverage-2 .sun {
+	transform: rotate(5deg) scale(0.95);
+}
+
+.cloud-coverage-3 .cloud1 {
+	left: calc(0px - 20%);
+	opacity: 0.6;
+	width: 60%;
+}
+
+.cloud-coverage-3 .cloud2 {
+	right: calc(0px - 20%);
+	top: 25%;
+	opacity: 0.6;
+	width: 60%;
+}
+
+.cloud-coverage-3 .sun {
+	transform: rotate(10deg) scale(0.90);
+}
+
+.cloud-coverage-4 .cloud1 {
+	left: calc(0px - 10%);
+	opacity: 0.8;
+	top: 2%;
+	width: 65%;
+}
+
+.cloud-coverage-4 .cloud2 {
+	right: calc(0px - 10%);
+	opacity: 0.8;
+	top: 30%;
+	width: 65%;
+}
+
+.cloud-coverage-4 .sun {
+	transform: rotate(15deg) scale(0.85);
+}
+
+.cloud-coverage-5 .cloud1 {
+	left: 0;
+	top: -4%;
+	opacity: 1;
+	width: 70%;
+}
+
+.cloud-coverage-5 .cloud2 {
+	right: 0;
+	top: 20%;
+	opacity: 1;
+	width: 70%;
+}
+
+.cloud-coverage-5 .sun {
+	transform: rotate(20deg) scale(0.80);
+}
+
+/* Age */
+.factor-age {
+	grid-row: 3 / 4;
+	grid-column: 1 / 2;
+}
+
+.factor-age_label {
+	font-family: var(--label-font);
+	color: #fff;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.factor-age_number {
+	font-family: var(--number-font);
+	color: #fff;
+	font-size: 3em;
+}
+
+/* Bmi */
+.factor-bmi {
+	grid-row: 3 / 4;
+	grid-column: 2 / 3;
+}
+
+.factor-bmi_label {
+	font-family: var(--label-font);
+	color: #fff;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.factor-bmi_number {
+	font-family: var(--number-font);
+	color: #fff;
+	font-size: 3em;
+}
+
+/* Clothes */
+.factor-clothes {
+	position: relative;
+	grid-column: 1 / 2;
+	grid-row: 1 / 3;
+	padding: 0 2em;
+}
+
+.clothes { 
+	position: absolute; 
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: calc(100% - 30px);
+	opacity: 0; 
+}
+
+.clothes.active { 
+	opacity: 1; 
+}
+
+.clothes-placeholder {
+	position: relative;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * */
+/* UV Index                            */
+/* * * * * * * * * * * * * * * * * * * */
+
+/* UV Index layout */
+.uv-index {
+	display: grid;
+	grid-template-columns: 70% 30%;
+	background-color: black;
+	border-radius: 10px;
+	background-image: linear-gradient(#2f0074, #3e0074); 
+}
+
+/* UV Index forecast */
+.uv-index-forecast { 
+	position: relative;
+}
+
+/* UV Index now */
+.uv-index-now {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #fff;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.uv-index-now_number {
+	font-size: 5em;
+	color: var(--accent-color);
+}
+
+.uv-index-now_label {
+	font-family: var(--label-font);
+}
+
+
+/* * * * * * * * * * * * * * * * * * * */
+/* Screen sizes                        */
+/* * * * * * * * * * * * * * * * * * * */
+
+@media(min-width:992px){
+	.uv-app {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 50px 1fr 1fr;
+	}
+
+	.app-header { grid-column: 1 / 3; grid-row: 1 / 2; }
+	.block-uv { grid-column: 1 / 2; grid-row: 2 / 3; }
+	.block-time { grid-column: 1 / 2; grid-row: 3 / 4; }
+	.block-factors { grid-column: 2 / 3; grid-row: 2 / 4; grid-row-gap: 4em; }
+}
+
+@media(min-width:640px) and (max-width: 992px) {
+	.app-header { grid-column: 1 / 3; grid-row: 1 / 2; }
+	.uv-app { grid-template-rows: 3em 1fr 1fr; grid-template-columns: calc(50vw - 2em) calc(50vw - 2em); grid-column-gap: 4em; }
+	.block-uv { grid-column: 1 / 2; grid-row: 2 / 3; }
+	.block-time { grid-column: 2 / 3; grid-row: 2 / 3; }
+	.block-factors { grid-column: 1 / 3; grid-row: 3 / 4; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr; }
+	.factor-bmi { grid-row: 2 / 3; grid-column: 3 / 4; }
+	.factor-age { grid-row: 1 / 2; grid-column: 3 / 4; } 
+	.uv-index-now_number { font-size: 4em; }
+}
+
+@media(max-width:520px) {
+	.uv-index-now_number { font-size: 4em; }
+}

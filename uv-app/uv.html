@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>UV test</title>
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="Assets/Css/style.css">
+</head>
+<body>
+	<main class="uv-app">
+		<h1 class="app-header">Vitamin D Dashboard</h1>
+		<div class="block block-uv">
+			<div class="uv-index">
+				<div class="uv-index-forecast">
+					<canvas id="uv-chart" class="uv-chart"></canvas>
+				</div>
+				<div class="uv-index-now">
+					<p class="uv-index-now_number number">5</p>	
+					<p class="uv-index-now_label">UV index</p>
+				</div>	
+			</div>		
+		</div>
+		<div class="block block-factors">
+			<div class="factor factor-clothes">
+				<img class="clothes clothes-placeholder" src="Assets/Images/clothes-1.svg">
+				<img class="clothes clothes-1" src="Assets/Images/clothes-1.svg">
+				<img class="clothes clothes-2" src="Assets/Images/clothes-2.svg">
+				<img class="clothes clothes-3 active" src="Assets/Images/clothes-3.svg">
+				<img class="clothes clothes-4" src="Assets/Images/clothes-4.svg">
+				<img class="clothes clothes-5" src="Assets/Images/clothes-5.svg">
+				<input type="range" min="1" max="5" value="1" class="slider clothes-slider" id="clothes-slider">
+			</div>
+			<div class="factor factor-cloud-coverage cloud-coverage-0">
+				<img id="sun" class="sun" src="./Assets/Images/sun.svg">
+				<img id="cloud1" class="cloud cloud1" src="./Assets/Images/cloud.svg">
+				<img id="cloud2" class="cloud cloud2" src="./Assets/Images/cloud.svg">
+				<input type="range" min="1" max="5" value="0" class="slider cloud-coverage-slider" id="cloud-coverage-slider">
+			</div>
+			<div class="factor factor-age">
+				<p class="label factor-age_label">AGE</p>
+				<p class="factor-age_number number">22</p>
+				<input type="range" min="1" max="99" value="22" class="slider age-slider" id="age-slider">
+			</div>
+			<div class="factor factor-spf">
+				<p class="label factor-spf_label">SPF</p>
+				<p class="factor-spf_number number">0</p>
+				<input type="range" min="0" max="60" value="0" class="slider spf-slider" id="spf-slider">
+			</div>
+			<div class="factor factor-bmi">
+				<p class="label factor-bmi_label">BMI</p>
+				<p class="factor-bmi_number number">22</p>
+				<input type="range" min="10" max="50" value="22" class="slider bmi-slider" id="bmi-slider">
+			</div>
+		</div>
+		<div class="block block-time">
+				<canvas id="time-chart"></canvas>
+		</div>
+	</main>
+
+	<script src="Assets/Js/chart.js"></script>
+	<script src="Assets/Js/actions.js"></script>
+<!-- 
+ To Do:
+	- fix the way things scale for phones and desktop sizes
+	- make clouds work
+	- make clothes work
+  -->
+</body>
+</html>
